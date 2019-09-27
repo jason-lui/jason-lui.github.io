@@ -2,36 +2,176 @@
 <html>
 
     <head>
-        <title> Jason's Personal Website </title>
+        <title>Jason's Personal Website</title>
+        <style>
+            body {
+                background-color:moccasin;
+            }
+            h1 {
+                font-family:Arial, Helvetica, sans-serif;
+                border:2px solid dodgerblue;
+                text-align: center
+            }
+            p, h2, a ,ul {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .course {
+                font-family: Arial, Helvetica, sans-serif;
+                text-decoration: None;
+            }
+            #item1 {
+                background: white
+            }
+            #item2 {
+                background: lightblue
+            }
+            #item3 {
+                background: lightcoral
+            }
+            #item4 {
+                background: lightgoldenrodyellow
+            }
+            #item5 {
+                background: lightgreen
+            }
+            #item6 {
+                background: lightpink
+            }
+            #item7 {
+                background: lightsalmon
+            }
+        </style>
     </head>
 
-    <body style="background-color:moccasin;">
-        <center><h1 style="font-family:Arial, Helvetica, sans-serif; border:2px solid dodgerblue"> Jason's Personal Website </h1></center>
-        <p style="font-family:Arial, Helvetica, sans-serif"> Hi my name is Jason Lui. I am 23 years old and I graduated from UBC with a degree in 
+    <body>
+        <h1>Jason's Personal Website</h1>
+        <p>
+            Hi my name is Jason Lui. I am 23 years old and I graduated from UBC with a degree in 
             biochemistry. I am currently enrolled in the Computer Systems Technology program at 
             BCIT. I decided to enroll here because I took a few computer science courses in my 
             final year at UBC and I enjoyed them a lot. I think that I will enjoy a career in 
-            computer science rather than biochemistry. </p>
+            computer science rather than biochemistry.
+        </p>
 
         <center><img src="images/gangplank.jpg" alt="gangplank" width="25%" height="25%"></center>
 
-        <h2 style="font-family:Arial, Helvetica, sans-serif">Current courses</h2>
-        <ul style="font-family:Arial, Helvetica, sans-serif">
-            <li><a href="https://www.bcit.ca/study/outlines/20193044909"> COMM 1116 - Business Communications 1 </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193044910"> COMP 1100 - CST Program Fundamentals </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193044912"> COMP 1113 - Applied Mathematics </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193044913"> COMP 1510 - Programming Methods </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193044914"> COMP 1536 - Introduction to Web Development </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193045300"> COMP 1712 - Business Analysis and System Design </li>
-            <li><a href="https://www.bcit.ca/study/outlines/20193045321"> COMP 1930 - Projects 1 </li>
+        <h2>Current courses</h2>
+        <ul>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193044909">
+                <div id="item1">
+                    <li>COMM 1116 - Business Communications 1</li>
+                        <p>
+                            Information technology professionals spend time each day communicating 
+                            orally and in writing with their supervisors, colleagues and clients. 
+                            As problem-solvers and entrepreneurs in industry, you need to communicate 
+                            quickly, clearly, and effectively. This course will teach you how to be a 
+                            professional and efficient communicator at work. You will write effective 
+                            business correspondence and instructions and deliver a formal oral 
+                            presentation to your set. The first term establishes the principles 
+                            and basic patterns on which you will build more advanced applications 
+                            in the second term.
+                        </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193044910">
+                <div id="item2">
+                    <li>COMP 1100 - CST Program Fundamentals</li>
+                    <p>
+                        The course covers topics of importance to new and continuing students on 
+                        how to balance school and related activities to enhance chances of success 
+                        in their academic careers. In this course students will learn a variety of 
+                        different techniques to improve study habits, note taking, and time management 
+                        skills. The class will also present other topics of interest to CST students 
+                        and will introduce students to various support systems at BCIT.
+                    </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193044912">
+                <div id="item3">
+                    <li>COMP 1113 - Applied Mathematics</li>
+                    <p>
+                        Comp 1113 is partially discrete mathematics, partially an introduction 
+                        to linear equations. The purpose of this course is to give a strong 
+                        foundation for future technical and programming courses. The course is 
+                        divided into three parts: (1) Boolean algebra and design of logic circuits; 
+                        (2) number systems and data representation; and (3) functions, linear 
+                        equations, vectors and matrices.
+                    </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193044913">
+                <div id="item4">
+                    <li>COMP 1510 - Programming Methods</li>
+                    <p>
+                        This hands-on course is the foundation for all future programming courses 
+                        and complements COMP 1536 and COMP 1910. This course introduces the fundamental 
+                        concepts of programming including design, development, testing, debugging 
+                        simple programs, as well as error-handling, and problem solving.
+                    </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193044914">
+                <div id="item5">
+                    <li>COMP 1536 - Introduction to Web Development</li>
+                    <p>
+                        This course is a web design and programming course with an emphasis on good 
+                        planning, interface design, multimedia, client-side scripting with JavaScript, 
+                        server-side scripting, and best practices. COMP 1536 will provide students 
+                        with a solid understanding about how web applications are constructed and 
+                        deployed. Students will be taught to use client-side RAD tools in order to 
+                        enhance their productivity. Students will complete a number of assignments 
+                        and exams as well as one larger project.
+                    </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193045300">
+                <div id="item6">
+                    <li>COMP 1712 - Business Analysis and System Design</li>
+                    <p>
+                        Business Analysis and Systems Design is the study of concepts, processes 
+                        and tools that professionals use to plan and develop information systems to 
+                        industry standards. Students learn how to ask implicit questions, to create 
+                        and document communication plans and to make better decisions prior to creating 
+                        a software system. Beginning with an introduction to the Software Development 
+                        Life Cycle (SDLC), students work in teams to initiate the system process, 
+                        analyze problems, discover requirements and create a logical design. Topics 
+                        include: techniques used in the discovery of business requirements, traditional 
+                        approaches to data and process modelling, entity-relationship diagrams, and an 
+                        introduction to relational database normalization. Agile life cycles such as 
+                        Scrum are also introduced and compared to more planned life cycles such as 
+                        waterfall. By the end of this course, successful participants will be able to 
+                        use tools and methods commonly used in industry to analyze, design, and implement 
+                        information systems as confirmed by a term project.
+                    </p>
+                </div>
+            </a>
+            <a class="course" href="https://www.bcit.ca/study/outlines/20193045321">
+                <div id="item7">
+                    <li>COMP 1930 - Projects 1</li>
+                    <p>
+                        Students learn to work in a collaborative environment and complete a small-scale 
+                        software project: a web app. Design and managing of implementation concepts will 
+                        be introduced: User Experience Design (XSD) and Agile methodology. The course 
+                        takes students through the UX design process which includes creating and 
+                        administering surveys & interviews, creating personas and user stories, designing 
+                        wireframes, and performing user tests with a developed implementation that is 
+                        based on the UX design process. Students will use the Agile methodology to manage 
+                        the software process. Software management workflow also includes using version 
+                        control, version control basics, utilizing web technologies (JavaScript, CSS, 
+                        HTML, data persistence via NoSQL data technologies). Some of the JavaScript 
+                        topics include DOM manipulation, event handling, web storage, AJAX calls and 
+                        using JQuery in order to create a rich web app.
+                    </p>
+                </div>
+            </a>
         </ul>
 
-        <a style="font-family:Arial, Helvetica, sans-serif" href="resume.html">Link to resume page</a> <br>
-        <a style="font-family:Arial, Helvetica, sans-serif" href="resume.pdf">Link to resume PDF</a> <br>
-        <a style="font-family:Arial, Helvetica, sans-serif" href="card.html">Link to part B</a> <br>
+        <a href="resume.html">Link to resume page</a><br>
+        <a href="resume.pdf">Link to resume PDF</a><br>
+        <a href="card.html">Link to part B</a><br>
         <br>
         <center><a href="https://www.bcit.ca/"><img src="images/bcit.png" width="50%" height="50%"></a>
-        <a href="https://www.cartoonstock.com/directory/c/computer_science.asp"><img src="images/comics.jpg" width="25%" height="25%"></a></center> <br>
+        <a href="https://www.cartoonstock.com/directory/c/computer_science.asp"><img src="images/comics.jpg" width="25%" height="25%"></a></center><br>
 
 
     </body>
