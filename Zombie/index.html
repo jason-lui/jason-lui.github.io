@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Jason's Zombie Shooter Game</title>
+    <link rel = 'stylesheet' type = 'text/css' href = 'css/style.css'/>
+</head>
+
+<html>
+    <body>
+        <!--Creation of HTML elements-->
+        <h1 id = 'score'>Score: 0</h1>
+        <div id = zombieAlive>
+            <img id = 'zombieAliveImage' src = 'images/zombieAlive.png' width = '140' height = '200'>
+        </div>
+        <div id = 'resetGame'>
+            <p id = 'resetGameText'>Restart</p>
+        </div>
+        <audio id="zombieDeath" src="src/zombieDeath.mp3"></audio>
+    </body>
+    
+    <script>
+        // Obtain image size, screen size, and center
+        let imgWidth = 140
+        let imgHeight = 200
+        let width = window.innerWidth
+        let height = window.innerHeight
+        let myLeft = width / 2 - imgWidth / 2;
+        let myTop = height / 2 - imgHeight / 2;
+
+        // Set initial game state
+        let isAlive = true
+        let scoreValue = 0
+
+        // Reset game
+        function reset() {
+            width = window.innerWidth
+            height = window.innerHeight
+            myLeft = width / 2;
+            myTop = height / 2;
+
+            isAlive = true
+
+            document.getElementById('zombieAlive').style.position = "absolute";
+            document.getElementById('zombieAlive').style.left = myLeft + "px";
+            document.getElementById('zombieAlive').style.top = myTop + "px";
+
+            scoreValue = 0;
+            document.getElementById('score').innerHTML = 'Score: ' + scoreValue.toString();
+        }
+
+        // Generate a zombie at a random location
+        function randomZombie() {
+            if (isAlive === true) {
+                width = window.innerWidth
+                height = window.innerHeight
+                myLeft = Math.random() * (width - imgWidth) + imgWidth / 2;
+                myTop = Math.random() * (height - 3.5 * imgHeight) + 2 * imgHeight;
+
+                document.getElementById('zombieAlive').style.position = "absolute";
+                document.getElementById('zombieAlive').style.left = myLeft + "px";
+                document.getElementById('zombieAlive').style.top = myTop + "px";
+            }
+        }
+
+        // Add functionality to the zombies
+        function clickZombie() {            
+            scoreValue += 1;
+            document.getElementById('score').innerHTML = 'Score: ' + scoreValue.toString();
+            isAlive = false;
+            deadZombie();
+        }
+
+        // Zombie death event
+        function deadZombie() {
+            document.getElementById('zombieDeath').play()
+            document.getElementById('zombieAliveImage').src = 'images/zombieDead.png';
+            setTimeout(hideZombie, 500);
+        }
+
+        // Clear dead zombie and spawn another
+        function hideZombie() {
+            document.getElementById('zombieAliveImage').src = 'images/zombieAlive.png';
+            isAlive = true;
+            clearInterval(myInterval)
+            randomZombie()
+            myInterval = setInterval(randomZombie, 2000)
+        }
+
+        // Invocation
+        document.getElementById('zombieAlive').onclick = clickZombie;
+        document.getElementById('resetGame').onclick = reset;
+        let myInterval = setInterval(randomZombie, 2000)
+
+    </script>
+</html>

@@ -1,0 +1,26 @@
+#score {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 45px;
+    text-align: center;
+}
+#zombieAlive {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#zombieDead {
+    visibility: hidden;
+}
+#resetGame {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-radius: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
