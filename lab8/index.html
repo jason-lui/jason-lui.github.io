@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+    </style>
+</head>
+
+<html>
+    <body>
+    </body>
+    
+    <script>
+        
+        // Generate buttons
+        function generateButtons(n) {
+            for (let i = 0; i < n; i++) {
+                let num = i + 1;
+                let btn = document.createElement('button');
+                btn.innerHTML = String.fromCharCode(64 + num);
+                btn.onclick = function() {
+                    console.log(`Button ${String.fromCharCode(64 + num)} was clicked.`);
+                }
+                document.body.appendChild(btn);
+            }
+        }
+
+        function Recipe(title, nOfServings, ingredients) {
+            this.title = title;
+            this.nOfServings = nOfServings;
+            this.ingredients = ingredients
+            this.print = function(nOfServings) {
+                document.write(`<br>Title: ${title}<br>`);
+                document.write(`Serves: ${nOfServings}<br>`);
+                document.write('Ingredients:<br>');
+                for (let i = 0; i < ingredients.length; i++) {
+                    document.write(`- ${ingredients[i]} <br>`);
+                }
+            }
+        }
+        // invocation
+        generateButtons(26)
+        let recipe1 = new Recipe('GirmehSabzi', 2, ['Cinnamon', 'Lettuce', 'Onion'])
+        let recipe2 = new Recipe('Seaweed Salad', 1, ['Seaweed', 'Sesame oil', 'Soy sauce', 'Mirin', 'Miso'])
+        recipe1.print(1)
+        recipe1.print(2)
+        recipe2.print(3)
+
+    </script>
+</html>
