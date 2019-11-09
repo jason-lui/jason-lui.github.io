@@ -26,6 +26,10 @@
         let height = window.innerHeight
         let myLeft = width / 2 - imgWidth / 2;
         let myTop = height / 2 - imgHeight / 2;
+        
+        // Explosion settings
+        let isExploding = false;
+        let explosionTime = 500;
 
         // Set initial game state
         let isAlive = true
@@ -64,14 +68,17 @@
 
         // Add functionality to the zombies
         function clickZombie() {            
-            scoreValue += 1;
-            document.getElementById('score').innerHTML = 'Score: ' + scoreValue.toString();
-            isAlive = false;
-            deadZombie();
+            if (isExploding === false) {
+                isExploding = true
+                scoreValue += 1;
+                document.getElementById('score').innerHTML = 'Score: ' + scoreValue.toString();
+                isAlive = false;
+                deadZombie();
+            }
         }
 
         // Zombie death event
-        function deadZombie() {
+        function deadZombie() {   
             document.getElementById('zombieDeath').play()
             document.getElementById('zombieAliveImage').src = 'images/zombieDead.png';
             setTimeout(hideZombie, 500);
@@ -84,6 +91,7 @@
             clearInterval(myInterval)
             randomZombie()
             myInterval = setInterval(randomZombie, 2000)
+            isExploding = false
         }
 
         // Handlers
