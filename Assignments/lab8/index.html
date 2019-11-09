@@ -28,7 +28,7 @@
             this.title = title;
             this.nOfServings = nOfServings;
             this.ingredients = ingredients
-            this.print = function(nOfServings) {
+            this.print = function() {
                 document.write(`<br>Title: ${title}<br>`);
                 document.write(`Serves: ${nOfServings}<br>`);
                 document.write('Ingredients:<br>');
@@ -41,9 +41,8 @@
         generateButtons(26)
         let recipe1 = new Recipe('GirmehSabzi', 2, ['Cinnamon', 'Lettuce', 'Onion'])
         let recipe2 = new Recipe('Seaweed Salad', 1, ['Seaweed', 'Sesame oil', 'Soy sauce', 'Mirin', 'Miso'])
-        recipe1.print(1)
-        recipe1.print(2)
-        recipe2.print(3)
+        recipe1.print()
+        recipe2.print()
 
     </script>
 </html>
