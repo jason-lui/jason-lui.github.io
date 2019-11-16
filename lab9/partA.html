@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <style>
+    </style>
+</head>
+
+<body>
+    <p>How many buttons to create?</p>
+    <input type = 'text' id = 'nButtons'>
+    <input type = 'button' id = 'createButtons' value = 'Go!'>
+    <p id = 'res'></p>
+</body>
+
+<script>
+    // Obtain image and window size
+    let imgWidth = 160;
+    let imgHeight = 80;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let myLeft = 0
+    let myTop = 0
+
+    // Initial variable state
+    let buttons = [];
+    let myInterval = null
+
+    function createButtons () {        
+        let nButtons = parseInt(document.getElementById('nButtons').value);
+        clear()
+
+        if (nButtons >= 5 && nButtons <= 100) {
+            document.getElementById('res').innerHTML = ""
+
+            for (let i = 0; i < nButtons; i++) {
+                let randomCol = randomColor();
+                width = window.innerWidth;
+                height = window.innerHeight;
+                myLeft = Math.random() * (width - imgWidth)
+                myTop = Math.random() * (height - 2 * imgHeight) + imgHeight;
+                
+                let newButton = new Rectangle(imgWidth, imgHeight, randomCol, i, myLeft, myTop);
+                buttons.push(newButton);
+                currNum++;
+            }
+            myInterval = setInterval(moveButtons, 2000);
+        } else {
+            document.getElementById('res').innerHTML = "Enter a number within 5 and 100"
+        }
+    }
+
+    // Random color generator
+    function randomColor () {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Button object constructor
+    function Rectangle(width, height, color, num, left, top) {
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.buttonNum = num;
+
+        this.btn = document.createElement('button');
+        this.btn.id = `button ${this.buttonNum}`
+        this.btn.style.height = '5em';
+        this.btn.style.width = '10em';
+        this.btn.style.background = this.color;
+        this.btn.style.position = 'absolute';
+        this.btn.style.left = left + 'px';
+        this.btn.style.top = top + 'px';
+        
+        document.body.appendChild(this.btn);
+    }
+
+    // Scatter all buttons randomly
+    function moveButtons () {
+        for (let i = 0; i < buttons.length; i++) {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            myLeft = Math.random() * (width - imgWidth)
+            myTop = Math.random() * (height - 2 * imgHeight) + imgHeight;
+
+            document.getElementById(buttons[i].btn.id).style.position = "absolute";
+            document.getElementById(buttons[i].btn.id).style.left = myLeft + "px";
+            document.getElementById(buttons[i].btn.id).style.top = myTop + "px";
+        }
+    }
+
+    // Resets the program
+    function clear() {
+        // Clears DOM
+        for (let i = 0; i < buttons.length; i++) {
+            document.getElementById(buttons[i].btn.id).remove();
+        }
+
+        // Reset variable states
+        currNum = 1;
+        document.getElementById('nButtons').value = '';
+        buttons = [];
+        clearInterval(myInterval)
+    }
+
+    // Handler
+    document.getElementById('createButtons').onclick = createButtons;
+
+</script>
+
+</html>
