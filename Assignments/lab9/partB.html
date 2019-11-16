@@ -42,6 +42,7 @@
                 let newButton = new Rectangle(imgWidth, imgHeight, randomCol, i);
                 newButton.btn.onclick = function () {
                     if (currButton === newButton.buttonNum) {
+                        document.getElementById('res').innerHTML = "Nice!";
                         newButton.btn.style.display = 'none';
                         currButton++;
                     } else {
